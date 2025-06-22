@@ -1,0 +1,4 @@
+mod flags;
+
+fn main() {
+}

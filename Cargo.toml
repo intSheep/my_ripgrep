@@ -1,0 +1,24 @@
+[package]
+name = "my_ripgrep"
+version = "0.1.0"
+edition = "2024"
+description = """
+ripgrep is a line-oriented search tool that recursively searches the current
+directory for a regex pattern while respecting gitignore rules. ripgrep has
+first class support on Windows, macOS and Linux.
+"""
+[[bin]]
+bench = false
+path = "crates/core/main.rs"
+name = "rg"
+[lib]
+name = "my_ripgrep"
+path = "src/lib.rs"
+[workspace]
+members = [
+    "crates/cli",
+    "crates/globset"
+]
+
+[dependencies]
+anyhow = "1.0.75"
